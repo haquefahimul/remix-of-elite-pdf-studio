@@ -1,0 +1,325 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Instrument Serif", "Cormorant Garamond", ui-serif, Georgia, serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  --color-tool-merge: var(--tool-merge);
+  --color-tool-split: var(--tool-split);
+  --color-tool-compress: var(--tool-compress);
+  --color-tool-rotate: var(--tool-rotate);
+  --color-tool-organize: var(--tool-organize);
+  --color-tool-delete: var(--tool-delete);
+  --color-tool-pdf-jpg: var(--tool-pdf-jpg);
+  --color-tool-jpg-pdf: var(--tool-jpg-pdf);
+  --color-tool-watermark: var(--tool-watermark);
+  --color-tool-pagenum: var(--tool-pagenum);
+  --color-tool-sign: var(--tool-sign);
+  --color-tool-edit: var(--tool-edit);
+  --color-tool-nup: var(--tool-nup);
+  --color-tool-pdf-png: var(--tool-pdf-png);
+  --color-tool-crop: var(--tool-crop);
+  --color-tool-extract: var(--tool-extract);
+  --color-tool-metadata: var(--tool-metadata);
+  --color-tool-unlock: var(--tool-unlock);
+  --color-tool-repair: var(--tool-repair);
+  --color-tool-ocr: var(--tool-ocr);
+  --color-tool-protect: var(--tool-protect);
+  --color-tool-pdf-word: var(--tool-pdf-word);
+  --color-tool-html-pdf: var(--tool-html-pdf);
+  --color-tool-compare: var(--tool-compare);
+  --color-tool-redact: var(--tool-redact);
+  --color-tool-excel-pdf: var(--tool-excel-pdf);
+  --color-tool-pdf-excel: var(--tool-pdf-excel);
+  --color-tool-flatten: var(--tool-flatten);
+  --color-tool-bates: var(--tool-bates);
+  --color-tool-scan: var(--tool-scan);
+  --color-tool-grayscale: var(--tool-grayscale);
+  --color-tool-resize: var(--tool-resize);
+  --color-tool-booklet: var(--tool-booklet);
+  --color-tool-reverse: var(--tool-reverse);
+  --color-tool-mirror: var(--tool-mirror);
+  --color-tool-background: var(--tool-background);
+  --color-tool-invert: var(--tool-invert);
+  --color-tool-header-footer: var(--tool-header-footer);
+  --color-tool-stamp: var(--tool-stamp);
+  --color-tool-auto-crop: var(--tool-auto-crop);
+  --color-tool-form-fill: var(--tool-form-fill);
+  --color-tool-annotate: var(--tool-annotate);
+  --color-tool-pdf-text: var(--tool-pdf-text);
+  --color-tool-compare-text: var(--tool-compare-text);
+  --color-tool-pdf-md: var(--tool-pdf-md);
+  --color-tool-margins: var(--tool-margins);
+  --color-tool-repeat: var(--tool-repeat);
+  --color-tool-split-size: var(--tool-split-size);
+  --color-tool-unnup: var(--tool-unnup);
+  --color-tool-remove-blank: var(--tool-remove-blank);
+  --color-tool-even-odd: var(--tool-even-odd);
+  --color-tool-text-pdf: var(--tool-text-pdf);
+  --color-tool-pdf-info: var(--tool-pdf-info);
+  --color-tool-split-pages: var(--tool-split-pages);
+  --color-tool-insert-blank: var(--tool-insert-blank);
+  --color-tool-bookmarks: var(--tool-bookmarks);
+  --color-tool-attachments: var(--tool-attachments);
+  --color-tool-attach: var(--tool-attach);
+  --color-tool-strip-annot: var(--tool-strip-annot);
+  --color-tool-img-compress: var(--tool-img-compress);
+  --color-tool-long-image: var(--tool-long-image);
+  --color-tool-smart-combine: var(--tool-smart-combine);
+  --color-tool-interleave: var(--tool-interleave);
+  --color-tool-highlight: var(--tool-highlight);
+  --color-tool-snapshot: var(--tool-snapshot);
+  --color-tool-cover: var(--tool-cover);
+  --color-tool-img-gray: var(--tool-img-gray);
+  --color-tool-img-wm: var(--tool-img-wm);
+  --color-tool-page-counter: var(--tool-page-counter);
+  --color-tool-img-resize: var(--tool-img-resize);
+  --color-tool-img-rotate: var(--tool-img-rotate);
+  --color-tool-img-convert: var(--tool-img-convert);
+  --color-tool-borders: var(--tool-borders);
+  --color-tool-pdf-html: var(--tool-pdf-html);
+  --color-tool-img-crop: var(--tool-img-crop);
+  --color-tool-img-blur: var(--tool-img-blur);
+  --color-tool-csv-pdf: var(--tool-csv-pdf);
+  --color-tool-json-pdf: var(--tool-json-pdf);
+  --color-tool-page-size: var(--tool-page-size);
+  --color-tool-img-trim: var(--tool-img-trim);
+  --color-tool-contact-sheet: var(--tool-contact-sheet);
+
+  --shadow-soft: 0 1px 2px oklch(0.2 0.01 250 / 0.04), 0 4px 16px oklch(0.2 0.01 250 / 0.04);
+  --shadow-elevated: 0 1px 2px oklch(0.2 0.01 250 / 0.06), 0 12px 32px oklch(0.2 0.01 250 / 0.08);
+  --shadow-pop: 0 2px 8px oklch(0.2 0.01 250 / 0.08), 0 24px 48px oklch(0.2 0.01 250 / 0.12);
+}
+
+:root {
+  --radius: 0.875rem;
+
+  /* Warm off-white canvas, near-black ink — Apple-minimal */
+  --background: oklch(0.985 0.003 80);
+  --foreground: oklch(0.18 0.012 250);
+
+  --surface: oklch(1 0 0);
+  --surface-elevated: oklch(0.995 0.002 80);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.012 250);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.012 250);
+
+  --primary: oklch(0.22 0.015 250);
+  --primary-foreground: oklch(0.985 0.003 80);
+
+  --secondary: oklch(0.96 0.006 80);
+  --secondary-foreground: oklch(0.22 0.015 250);
+
+  --muted: oklch(0.96 0.006 80);
+  --muted-foreground: oklch(0.5 0.012 250);
+
+  --accent: oklch(0.94 0.008 80);
+  --accent-foreground: oklch(0.22 0.015 250);
+
+  --destructive: oklch(0.58 0.21 27);
+  --destructive-foreground: oklch(0.985 0.003 80);
+
+  --success: oklch(0.68 0.16 155);
+  --success-foreground: oklch(0.985 0.003 80);
+
+  --border: oklch(0.92 0.005 80);
+  --border-strong: oklch(0.86 0.008 80);
+  --input: oklch(0.92 0.005 80);
+  --ring: oklch(0.55 0.04 250);
+
+  /* Tool accents — soft, distinct */
+  --tool-merge: oklch(0.72 0.13 250);     /* periwinkle blue */
+  --tool-split: oklch(0.72 0.14 30);      /* warm coral */
+  --tool-compress: oklch(0.72 0.14 155);  /* mint */
+  --tool-rotate: oklch(0.72 0.14 90);     /* sage gold */
+  --tool-organize: oklch(0.7 0.13 290);   /* lavender */
+  --tool-delete: oklch(0.7 0.14 15);      /* terracotta */
+  --tool-pdf-jpg: oklch(0.74 0.13 60);    /* peach */
+  --tool-jpg-pdf: oklch(0.7 0.13 200);    /* sky */
+  --tool-watermark: oklch(0.7 0.14 320);  /* magenta */
+  --tool-pagenum: oklch(0.7 0.13 220);    /* steel blue */
+  --tool-sign: oklch(0.55 0.12 270);      /* indigo ink */
+  --tool-edit: oklch(0.72 0.14 130);      /* spring green */
+  --tool-nup: oklch(0.7 0.12 50);         /* amber */
+  --tool-pdf-png: oklch(0.72 0.13 170);   /* teal */
+  --tool-crop: oklch(0.7 0.13 110);       /* olive */
+  --tool-extract: oklch(0.72 0.14 240);   /* cobalt */
+  --tool-metadata: oklch(0.7 0.13 340);   /* rose */
+  --tool-unlock: oklch(0.72 0.14 75);     /* mustard */
+  --tool-repair: oklch(0.7 0.13 190);     /* aqua */
+  --tool-ocr: oklch(0.66 0.16 280);       /* violet */
+  --tool-protect: oklch(0.6 0.16 145);    /* forest */
+  --tool-pdf-word: oklch(0.55 0.16 245);  /* word blue */
+  --tool-html-pdf: oklch(0.7 0.16 35);    /* sunset */
+  --tool-compare: oklch(0.65 0.18 10);    /* signal red */
+  --tool-redact: oklch(0.3 0.02 250);     /* near-black */
+  --tool-excel-pdf: oklch(0.62 0.16 145);  /* spreadsheet green */
+  --tool-pdf-excel: oklch(0.6 0.15 160);   /* deep mint */
+  --tool-flatten: oklch(0.55 0.04 250);    /* slate */
+  --tool-bates: oklch(0.45 0.1 260);       /* navy */
+  --tool-scan: oklch(0.7 0.14 200);        /* cyan */
+  --tool-grayscale: oklch(0.45 0.01 250);  /* graphite */
+  --tool-resize: oklch(0.68 0.13 230);     /* azure */
+  --tool-booklet: oklch(0.6 0.14 40);      /* burnt orange */
+  --tool-reverse: oklch(0.7 0.13 305);     /* orchid */
+  --tool-mirror: oklch(0.68 0.13 175);     /* tealine */
+  --tool-background: oklch(0.72 0.13 100); /* citron */
+  --tool-invert: oklch(0.25 0.02 260);     /* night */
+  --tool-header-footer: oklch(0.66 0.13 215); /* slate blue */
+  --tool-stamp: oklch(0.62 0.18 25);          /* stamp red */
+  --tool-auto-crop: oklch(0.7 0.13 140);      /* fern */
+  --tool-form-fill: oklch(0.68 0.13 260);     /* iris */
+  --tool-annotate: oklch(0.78 0.15 85);       /* highlighter yellow */
+  --tool-pdf-text: oklch(0.55 0.05 250);      /* ink slate */
+  --tool-compare-text: oklch(0.6 0.16 25);    /* signal coral */
+  --tool-pdf-md: oklch(0.55 0.1 220);         /* code blue */
+  --tool-margins: oklch(0.7 0.1 80);          /* sand */
+  --tool-repeat: oklch(0.66 0.14 290);        /* lilac */
+  --tool-split-size: oklch(0.62 0.14 50);     /* amber-orange */
+  --tool-unnup: oklch(0.66 0.13 195);         /* turquoise */
+  --tool-remove-blank: oklch(0.62 0.13 20);   /* clay */
+  --tool-even-odd: oklch(0.66 0.14 165);      /* jade */
+  --tool-text-pdf: oklch(0.5 0.06 250);       /* ink blue */
+  --tool-pdf-info: oklch(0.62 0.13 235);      /* info blue */
+  --tool-split-pages: oklch(0.7 0.13 70);     /* honey */
+  --tool-insert-blank: oklch(0.7 0.1 130);    /* mint sage */
+  --tool-bookmarks: oklch(0.6 0.14 270);      /* violet */
+  --tool-attachments: oklch(0.62 0.13 60);    /* warm amber */
+  --tool-attach: oklch(0.66 0.13 200);        /* attach blue */
+  --tool-strip-annot: oklch(0.5 0.04 250);    /* slate */
+  --tool-img-compress: oklch(0.66 0.14 165);  /* jade */
+  --tool-long-image: oklch(0.6 0.14 285);     /* indigo */
+  --tool-smart-combine: oklch(0.62 0.16 320); /* magenta */
+  --tool-interleave: oklch(0.66 0.14 220);    /* steel */
+  --tool-highlight: oklch(0.78 0.16 95);      /* highlighter */
+  --tool-snapshot: oklch(0.62 0.13 200);      /* lens cyan */
+  --tool-cover: oklch(0.6 0.14 30);           /* clay */
+  --tool-img-gray: oklch(0.5 0.02 250);       /* graphite */
+  --tool-img-wm: oklch(0.66 0.14 310);        /* orchid */
+  --tool-page-counter: oklch(0.6 0.13 250);   /* slate blue */
+  --tool-img-resize: oklch(0.68 0.13 200);    /* aqua */
+  --tool-img-rotate: oklch(0.7 0.13 90);      /* sage gold */
+  --tool-img-convert: oklch(0.66 0.14 320);   /* magenta */
+  --tool-borders: oklch(0.5 0.04 250);        /* graphite */
+  --tool-pdf-html: oklch(0.6 0.13 220);       /* code blue */
+  --tool-img-crop: oklch(0.66 0.14 145);      /* leaf */
+  --tool-img-blur: oklch(0.62 0.13 260);      /* dusk */
+  --tool-csv-pdf: oklch(0.6 0.15 150);        /* sheet green */
+  --tool-json-pdf: oklch(0.55 0.14 245);      /* code indigo */
+  --tool-page-size: oklch(0.66 0.13 235);     /* steel */
+  --tool-img-trim: oklch(0.62 0.13 65);       /* honey */
+  --tool-contact-sheet: oklch(0.6 0.13 305);  /* orchid */
+}
+
+.dark {
+  --background: oklch(0.16 0.01 250);
+  --foreground: oklch(0.96 0.005 80);
+  --surface: oklch(0.2 0.012 250);
+  --surface-elevated: oklch(0.22 0.012 250);
+  --card: oklch(0.2 0.012 250);
+  --card-foreground: oklch(0.96 0.005 80);
+  --popover: oklch(0.2 0.012 250);
+  --popover-foreground: oklch(0.96 0.005 80);
+  --primary: oklch(0.96 0.005 80);
+  --primary-foreground: oklch(0.18 0.012 250);
+  --secondary: oklch(0.26 0.012 250);
+  --secondary-foreground: oklch(0.96 0.005 80);
+  --muted: oklch(0.26 0.012 250);
+  --muted-foreground: oklch(0.7 0.012 250);
+  --accent: oklch(0.28 0.012 250);
+  --accent-foreground: oklch(0.96 0.005 80);
+  --destructive: oklch(0.65 0.2 27);
+  --destructive-foreground: oklch(0.96 0.005 80);
+  --success: oklch(0.7 0.16 155);
+  --success-foreground: oklch(0.18 0.012 250);
+  --border: oklch(0.3 0.012 250);
+  --border-strong: oklch(0.4 0.012 250);
+  --input: oklch(0.3 0.012 250);
+  --ring: oklch(0.7 0.04 250);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv11", "ss01", "ss03";
+  }
+  ::selection {
+    background-color: oklch(0.85 0.05 250);
+    color: var(--color-foreground);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+    font-feature-settings: "liga", "dlig";
+  }
+  .grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.4;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.35'/></svg>");
+    mix-blend-mode: multiply;
+  }
+  .scrollbar-thin::-webkit-scrollbar { width: 8px; height: 8px; }
+  .scrollbar-thin::-webkit-scrollbar-thumb { background: var(--color-border-strong); border-radius: 999px; }
+  .scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
